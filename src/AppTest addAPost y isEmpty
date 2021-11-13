@@ -1,0 +1,146 @@
+package com.practica.cajanegra;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.logging.Logger;
+
+import org.junit.Before;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
+import com.cajanegra.SingleLinkedListImpl;
+
+
+
+public class AppTest {
+	
+//	addAPost() Test
+
+  
+@Test
+void TC11() {
+    SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+    assertThrows(IllegalArgumentException.class, () -> {
+    	initialList.addAtPos("@",5);
+    });
+}
+@Test
+void TC12() {
+    SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","A","A","A","A","A");
+    initialList.addAtPos("A", 5);
+    
+    	assertTrue(initialList.toString().equals(expectedList.toString()));
+    
+    }
+    
+@Test
+void TC13() {
+	  SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","A","A","A","B","A");
+	    initialList.addAtPos("B", 5);
+	    
+	    assertTrue(initialList.toString().equals(expectedList.toString()));
+}
+@Test
+void TC14() {
+	SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+    assertThrows(IllegalArgumentException.class, () -> {
+    	initialList.addAtPos("P",0);
+    });
+}
+@Test
+void TC15() {
+	  SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("P","A","A","A","A","A");
+	    initialList.addAtPos("P", 1);
+	    
+	    assertTrue(initialList.toString().equals(expectedList.toString()));
+}
+
+@Test
+void TC16() {
+	  SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","P","A","A","A","A");
+	    initialList.addAtPos("P", 2);
+	    
+	    assertTrue(initialList.toString().equals(expectedList.toString()));
+}
+
+@Test
+void TC17() {
+	  SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","A","A","A","P","A");
+	    initialList.addAtPos("P", 5);
+	    
+	    assertTrue(initialList.toString().equals(expectedList.toString()));
+}
+@Test
+void TC18() {
+	  SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","A","A","A","Y","A");
+	    initialList.addAtPos("Y", 5);
+	    
+	    assertTrue(initialList.toString().equals(expectedList.toString()));
+}
+
+@Test
+void TC19() {
+	  SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","A","A","A","Z","A");
+	    initialList.addAtPos("Z", 5);
+	    
+	    assertTrue(initialList.toString().equals(expectedList.toString()));
+}
+
+
+
+@Test
+void TC110() {
+	   SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	    assertThrows(IllegalArgumentException.class, () -> {
+	    	initialList.addAtPos("[",5);
+	    });
+	}
+
+@Test
+void TC111() {
+	   SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
+	   String var = null;
+	    assertThrows(IllegalArgumentException.class, () -> {
+	    	initialList.addAtPos(var,5);
+	    });
+	}
+
+
+
+// isEmpty() Test
+
+@Test
+void TC71() {
+	SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String> ();
+	assertTrue(initialList.isEmpty());
+	
+}
+
+@Test
+void TC72() {
+	SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A");
+	assertFalse(initialList.isEmpty());
+	
+}
+}
