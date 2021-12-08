@@ -31,7 +31,7 @@ import com.cajanegra.SingleLinkedListImpl;
 
 
 
-public class AddAtPos {
+public class AddAtPosTest {
     @Test
     void TC11() {
         SingleLinkedListImpl < Character > initialList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A');
