@@ -51,8 +51,8 @@ void TC12() {
 @Test
 void TC13() {
 	  SingleLinkedListImpl<String> initialList = new SingleLinkedListImpl<String>("A","A","A","A","A");
-	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","A","A","A","B","A");
-	    initialList.addAtPos("B", 5);
+	    SingleLinkedListImpl<String> expectedList = new SingleLinkedListImpl<String>("A","A","A","A","A","B");
+	    initialList.addAtPos("B", 6);
 	    
 	    assertTrue(initialList.toString().equals(expectedList.toString()));
 }
