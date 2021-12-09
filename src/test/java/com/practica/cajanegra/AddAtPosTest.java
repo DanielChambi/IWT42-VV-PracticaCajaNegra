@@ -36,7 +36,7 @@ public class AddAtPosTest {
     void TC11() {
         SingleLinkedListImpl < Character > initialList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A');
         assertThrows(IllegalArgumentException.class, () -> {
-            initialList.addAtPos('@', 5);
+            initialList.addAtPos('@', 6);
         });
     }
     
@@ -44,7 +44,7 @@ public class AddAtPosTest {
     void TC12() {
         SingleLinkedListImpl < Character > initialList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A');
         SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A', 'A');
-        initialList.addAtPos('A', 5);
+        initialList.addAtPos('A', 6);
 
         assertTrue(initialList.toString().equals(expectedList.toString()));
     }
@@ -109,7 +109,7 @@ public class AddAtPosTest {
         SingleLinkedListImpl < Character > initialList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A');
         SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A', 'Z');
         initialList.addAtPos('Z', 6);
-
+        
         assertTrue(initialList.toString().equals(expectedList.toString()));
     }
 
@@ -127,7 +127,7 @@ public class AddAtPosTest {
         Character
         var = null;
         assertThrows(IllegalArgumentException.class, () -> {
-    		initialList.addAtPos(var,6);
+    		initialList.addAtPos(var,5);
     	});
     } 
 }

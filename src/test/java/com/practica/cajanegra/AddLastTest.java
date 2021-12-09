@@ -30,36 +30,46 @@ public class AddLastTest {
 	@Test
 	void TC31() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A','A','A','A','A','P');
 		initialList.addLast('P');
-	    assertEquals('P', initialList.getAtPos(initialList.size()));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test
 	void TC32() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A','A','A','A','A','A');
 		initialList.addLast('A');
-	    assertEquals('A', initialList.getAtPos(initialList.size()));
-	    }
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
+	}
 	    
 	@Test
 	void TC33() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A','A','A','A','A','Z');
 		initialList.addLast('Z');
-	    assertEquals('Z', initialList.getAtPos(initialList.size()));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test
 	void TC34() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A','A','A','A','A','B');
 		initialList.addLast('B');
-	    assertEquals('B', initialList.getAtPos(initialList.size()));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test
 	void TC35() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A','A','A','A','A','Y');
 		initialList.addLast('Y');
-	    assertEquals('Y', initialList.getAtPos(initialList.size()));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test

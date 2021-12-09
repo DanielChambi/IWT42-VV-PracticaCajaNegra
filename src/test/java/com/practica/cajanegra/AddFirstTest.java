@@ -31,57 +31,70 @@ public class AddFirstTest {
 	@Test
 	void TC21() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('P','A','A','A','A','A');
 		initialList.addFirst('P');
-	    assertEquals('P', initialList.getAtPos(1));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test
 	void TC22() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A','A','A','A','A','A');
 		initialList.addFirst('A');
-	    assertEquals('A', initialList.getAtPos(1));
-	    }
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
+	}
 	    
 	@Test
 	void TC23() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('P','A','A','A','A','A');
 		initialList.addFirst('Z');
-	    assertEquals('Z', initialList.getAtPos(1));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test
 	void TC24() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('P','A','A','A','A','A');
 		initialList.addFirst('B');
-	    assertEquals('B', initialList.getAtPos(1));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test
 	void TC25() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
+		SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('P','A','A','A','A','A');
 		initialList.addFirst('Y');
-	    assertEquals('Y', initialList.getAtPos(1));
+		
+		assertTrue(initialList.toString().equals(expectedList.toString()));
 	}
 	
 	@Test
 	void TC26() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
-		initialList.addFirst('@');
-	    assertEquals('A', initialList.getAtPos(1));
+		assertThrows(IllegalArgumentException.class, () -> {
+			initialList.addFirst('@');
+    	});
 	}
 	
 	@Test
 	void TC27() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
-		initialList.addFirst(']');
-	    assertEquals('A', initialList.getAtPos(1));
+		assertThrows(IllegalArgumentException.class, () -> {
+			initialList.addFirst('[');
+    	});
 	}
 	
 	@Test
 	void TC28() {
 		SingleLinkedListImpl<Character> initialList = new SingleLinkedListImpl<Character>('A','A','A','A','A');
-		initialList.addFirst(null);
-	    assertEquals('A', initialList.getAtPos(1));
+		assertThrows(IllegalArgumentException.class, () -> {
+			initialList.addFirst(null);
+    	});
 	}
 
 }

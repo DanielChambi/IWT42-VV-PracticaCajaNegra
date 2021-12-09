@@ -57,7 +57,7 @@ public class IndexOfTest {
 	@Test
 	public void TC67() {
 		SingleLinkedListImpl < Character > initialList = new SingleLinkedListImpl < Character > ('A', 'B', 'C', 'D', 'E', 'F', 'G');
-		assertThrows(NoSuchElementException.class, () -> {
+		assertThrows(IllegalArgumentException.class, () -> {
 			initialList.indexOf('@');
 		});
 	}
@@ -65,7 +65,7 @@ public class IndexOfTest {
 	@Test
 	public void TC68() {
 		SingleLinkedListImpl < Character > initialList = new SingleLinkedListImpl < Character > ('A', 'B', 'C', 'D', 'E', 'F', 'G');
-		assertThrows(NoSuchElementException.class, () -> {
+		assertThrows(IllegalArgumentException.class, () -> {
 			initialList.indexOf('[');
 		});
 	}

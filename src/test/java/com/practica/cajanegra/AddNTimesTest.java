@@ -72,11 +72,9 @@ public class AddNTimesTest {
     @Test
     public void TC45() {
         SingleLinkedListImpl < Character > initialList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A');
-        initialList.addNTimes('P', 0);
-        SingleLinkedListImpl < Character > expectedList = new SingleLinkedListImpl < Character > ('A', 'A', 'A', 'A', 'A');
-
-        assertTrue(initialList.toString().equals(expectedList.toString()));
-
+        assertThrows(IllegalArgumentException.class, () -> {
+            initialList.addNTimes('P', 0);
+        });
     }
 
 
